@@ -48,42 +48,660 @@
 // 	+jpg(bla)
 
 
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin,cyrillic-ext")
+@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin,cyrillic-ext")
+
+=rb
+	font-family: 'Roboto', sans-serif
+	font-weight: 400
+=rbm
+	font-family: 'Roboto', sans-serif
+	font-weight: 500
+=rbb
+	font-family: 'Roboto', sans-serif
+	font-weight: 700
+=rbc
+	font-family: 'Roboto Condensed', sans-serif
+	font-weight: 400
+=rbcb
+	font-family: 'Roboto Condensed', sans-serif
+	font-weight: 700
+
+// body
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
+	+rb
+	font-size: 14px 
+	color: #272727
 	line-height: 1.4
+	a
+		text-decoration: none
+		+transition(all .1s linear)
+		&:hover
+			text-decoration: underline
+
+// in
+.in
+	margin: 0 auto
+	width: 1200px
+	+clr
+	+box
+%in
+	@extend .in
+
+// ico
+.ico
+	display: inline-block
+	&.ico_briefcase
+		+s(ico-briefcase)
+	&.ico_bulb
+		+s(ico-bulb)
+	&.ico_globe
+		+s(ico-globe)
+	&.ico_mark
+		+s(ico-mark)
+	&.ico_about
+		+s(ico-about)
+	&.ico_flag
+		+s(ico-flag)
+	&.ico_inf
+		+s(ico-inf)
+	&.ico_list
+		+s(ico-list)
+	&.ico_part-1
+		+s(part-1)
+		&:hover
+			+s(part-1-hover)
+	&.ico_part-2
+		+s(part-2)
+		&:hover
+			+s(part-2-hover)
+	&.ico_part-3
+		+s(part-3)
+		&:hover
+			+s(part-3-hover)
+	&.ico_part-4
+		+s(part-4)
+		&:hover
+			+s(part-4-hover)
+	&.ico_part-5
+		+s(part-5)
+		&:hover
+			+s(part-5-hover)
+	&.ico_part-6
+		+s(part-6)
+		&:hover
+			+s(part-6-hover)
+	&.ico_part-7
+		+s(part-7)
+		&:hover
+			+s(part-7-hover)
+	&.ico_part-8
+		+s(part-8)
+		&:hover
+			+s(part-8-hover)
+	&.ico_in
+		+s(ico-in)
+	&.ico_f
+		+s(ico-f)
+
+// btn
+.btn
+	position: relative
+	padding: 9px 10px
+	height: 34px
+	min-width: 153px
+	color: #fff
+	text-align: center
+	line-height: 1
+	font-size: 14px
+	+border-radius(10px)
+	display: inline-block
+	+transition(all .1s linear)
+	+box
+	&:hover
+		text-decoration: none
+	&:active
+		top: -1px
+	&.btn_red
+		background-color: #931c18
+		&:hover
+			background: darken(#931c18, 6)
+	&.btn_gray
+		background-color: #464B55
+		&:hover
+			background: darken(#464B55, 6)
+
+// header 
+.header
+	font-size: 0
+	+box-shadow(0 1px 3px rgba(0, 0, 0, 0.45))
+	.header__in
+		position: relative
+		@extend %in
+		padding: 0 31px 0 336px
+		height: 100px
+
+// logo
+.logo
+	position: absolute
+	top: 50%
+	left: 28px
+	margin-top: -30px
+	+s(logo)
+
+// menu
+.menu
+	float: left
+	margin-top: 44px
+	.menu__item
+		margin-left: 25px
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		a
+			color: #282828
+			text-transform: uppercase
+			font-size: 18px
+			letter-spacing: -0.2px
+			line-height: 1
+			+rbc
+
+// callback
+.callback
+	float: right
+	margin-top: 14px
+
+// phone
+.phone
+	margin-bottom: 4px
+	font-size: 20px
+	text-align: center
+	letter-spacing: -0.2px
+	+rbcb
+
+// slider
+.slider
+	height: 600px
+	overflow: hidden
+	.slider__item
+		width: 100%
+		height: 600px
+		&.slider__item_1
+			background: url('../img/slider-img-1.png') no-repeat 50% 50%
+			background-size: cover
+		&.slider__item_2
+			background: url('../img/slider-img-2.png') no-repeat 50% 50%
+			background-size: cover
+		&.slider__item_3
+			background: url('../img/slider-img-3.png') no-repeat 50% 50%
+			background-size: cover
+	.slider__in
+		margin: 110px auto 0
+		width: 592px
+	.slider__title
+		padding: 0 7px 0 20px
+		color: #F1F1F1
+		font-size: 36px
+		line-height: 1.2
+		letter-spacing: -0.6px
+		text-transform: uppercase
+		+rbcb
+
+// description
+.description
+	position: relative
+	margin-top: 90px
+	padding: 21px 20px 35px
+	height: 175px
+	background: url('../img/slider-text-bg.png') no-repeat 0 0
+	+box
+	.description__text
+		padding-right: 70px
+		font-size: 15px
+		line-height: 1.2
+		a
+			color: #931C18
+			font-weight: 700
+			&:hover
+				text-decoration: none
+				color: darken(#931C18, 10)
+	.photo
+		position: absolute
+		top: -83px
+		right: -83px
+		height: 165px
+		width: 165px
+		img
+			max-width: none
+			+translate(-50%, -50%)
+	.description__bold
+		margin-top: 10px
+		color: #272727
+		font-weight: 700
+		font-style: italic
+	.btn
+		position: absolute
+		bottom: -17px
+		left: 50%
+		margin-left: -78px
+		z-index: 1
+
+// photo
+.photo
+	height: 160px
+	width: 160px
+	overflow: hidden
+	border: 5px solid rgba(#fff, .9)
+	+border-radius(50%)
+	+box
+	img
+		position: relative
+		top: 50%
+		left: 50%
+		+translate(-50%, -50%)
+
+// about
+.about
+	padding: 40px 0 80px
+	.about__in
+		@extend %in
+	.about__col
+		float: left
+		margin-left: 64px
+		width: 240px
+		font-size: 13px
+		line-height: 1.2
+		&:first-child
+			margin-left: 30px
+	.about__ico
+		height: 118px
+		text-align: center
+		line-height: 118px
+		.ico
+			vertical-align: middle
+
+// title
+.title
+	font-size: 36px
+
+.title-small,
+.title
+	text-align: center
+	line-height: 1.2
+	text-transform: uppercase
+	+rbcb
+
+// title-small
+.title-small
+	margin-bottom: 10px
+	font-size: 20px
+
+// nav
+.nav-wrap
+	padding-top: 50px
+	height: 376px
+	background: url(../img/nav-bg.png) no-repeat 50% 50%
+	background-size: cover
+	+box
+
+.nav
+	@extend %in
+	text-align: center
+	font-size: 0
+	.nav__item
+		margin-left: 10px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	.nav__link
+		padding: 40px 40px 0
+		height: 283px
+		width: 283px
+		color: #fff
+		+border-radius(50%)
+		display: block
+		+box
+		&:hover
+			background-color: rgba(147, 27, 23, 0.7)
+			text-decoration: none
+	.nav__ico
+		height: 136px
+		line-height: 136px
+		.ico
+			vertical-align: middle
+			&.ico_flag
+				margin-top: -20px
+	.title-small
+		font-weight: normal
+
+// services
+.services
+	padding: 70px 0 125px
+	background: #f9f8f8
+	.services__in
+		padding-top: 65px
+		font-size: 0
+		text-align: center
+		@extend %in
+	.services__item
+		margin-left: 19px
+		width: 283px
+		color: #272727
+		font-size: 15px
+		vertical-align: top
+		display: inline-block
+		+rbm
+		&:hover
+			text-decoration: none
+			.title-small
+				text-decoration: underline
+		&:first-child
+			margin-left: 0
+	.services__img
+		margin-bottom: 15px
+		height: 283px
+		width: 283px
+		line-height: 277px
+		border: 3px solid #464B55
+		+border-radius(50%)
+		+box
+		.photo
+			height: 235px
+			width: 235px
+			vertical-align: middle
+			border: none
+			display: inline-block
+
+// tab
+.tab
+	position: relative
+	border-top: 1px solid #b9b9b9
+	.tab__list
+		position: absolute
+		bottom: 100%
+		left: 50%
+		font-size: 0
+		margin-bottom: 1px
+		+translate(-50%, 0)
+	.tab__item
+		display: inline-block
+		vertical-align: bottom
+		background: #dedede
+		&:first-child
+			+border-radius(4px 0 0 0)
+		&:last-child
+			+border-radius(0 4px 0 0)
+		&.is-active
+			background: none
+			.tab__link
+				padding-top: 30px
+				color: #931B17
+				text-transform: uppercase
+				background: #fff
+				+border-radius(4px 4px 0 0)
+				+box-shadow(inset 0 0 0 1px #b9b9b9)
+				&:before
+					display: block
+	.tab__link
+		position: relative
+		padding: 20px 35px
+		min-width: 180px
+		color: #808080
+		line-height: 1
+		text-align: center
+		font-size: 28px
+		letter-spacing: -1px
+		display: block
+		+rbcb
+		+box
+		&:hover
+			text-decoration: none
+		&:before
+			position: absolute
+			content: ''
+			left: 1px
+			right: 1px
+			bottom: -1px
+			height: 2px
+			background: #fff
+			z-index: 1
+			display: none
+	.tab__in
+		@extend %in
+		font-size: 0
+		.event
+			margin-left: 40px
+			&:first-child
+				margin-left: 0
+	.tab__cont
+		padding: 64px 0 62px
+		text-align: center
+		display: none
+		&.is-active
+			display: block
+
+// event
+.event
+	width: 262px
+	font-size: 15px
+	+rbm
+	color: #272727
+	vertical-align: top
+	display: inline-block
+	.event__img
+		padding: 12px
+		display: inline-block
+		overflow: hidden
+		border: 1px solid #bcbcbc
+		+border-radius(50%)
+	.event__text
+		margin: 10px 0
+		padding: 0 13px
+		+box
+	.photo
+		overflow: hidden
+		height: 235px
+		width: 235px
+	.date
+		padding: 10px 28px 0
+		border-top: 1px solid #b9b9b9
+
+// date
+.date
+	color: #939393
+	font-size: 13px
+	display: inline-block
+	+rbc
+
+// team
+.team
+	padding: 68px 0
+	font-size: 0
+	text-align: center
+	border-top: 1px solid #b9b9b9
+	border-bottom: 1px solid #b9b9b9
+	background: url('../img/team-left-bg.png') no-repeat 0 0, url('../img/team-right-bg.png') no-repeat 100% 0, #f3f3f3
+	background-size: contain
+	.team__in
+		padding-top: 38px
+		@extend %in
+	.team__worker
+		padding: 30px 0 15px
+		width: 20%
+		min-height: 336px
+		line-height: 1.2
+		color: #272727
+		font-size: 15px
+		vertical-align: top
+		display: inline-block
+		+box
+		+rbm
+		&:hover
+			text-decoration: none
+			background: #d7d8d8
+	.team__text
+		width: 190px
+		display: inline-block
+	.team__coumtry
+		font-size: 13px
+		+rb
+	.photo
+		margin-bottom: 10px
+		display: inline-block
+
+// partners
+.partners
+	padding: 66px 0 96px
+	.partners__in
+		margin: 0 auto
+		width: 705px
+	.partners__row
+		margin-top: 50px
+		width: 100%
+		display: table
+	.partners__item
+		height: 80px
+		line-height: 80px
+		padding-right: 50px
+		display: table-cell
+	.ico
+		vertical-align: middle
+		+transition(all 0s linear)
 
 
-// common blocks      
+// colors
+.colors
+	font-size: 0
+.colors__red,
+.colors__cherry,
+.colors__gray,
+.colors__light-gray
+	height: 78px
+	line-height: 78px
+	width: 25%
+	text-align: center
+	vertical-align: top
+	display: inline-block
+.colors__red
+	background: #941c19
+.colors__cherry
+	background: #792c2d
+.colors__gray
+	background: #3f444c
+.colors__light-gray
+	background: #5f646d
+
+.logo-footer
+	vertical-align: middle
+	display: inline-block
+	+s(logo-footer)
 
 
+// map
+.map
+	position: relative
+	margin-top: 23px
+	width: 302px
+	height: 211px
+	border: 5px solid #2e3032
+	+box
+	.map__in
+		width: 290px
+		height: 199px
+	.btn
+		position: absolute
+		left: 50%
+		bottom: -19px
+		z-index: 100
+		+translate(-50%, 0)
+		&:active
+			top: auto
+	.gm-style-cc,
+	.gm-style a img
+		display: none !important
 
+// bimpost
+.bimpost
+	background: #31353b
+	.bimpost__img
+		width: 265px
+		img
+			width: 100%
+			display: block
+	.bimpost__text
+		padding-right: 10px
+		text-align: right
+		font-size: 28px
+		line-height: 38px
+		+rbm
 
+.soc
+	margin-top: 35px
+	font-size: 20px
+	text-transform: uppercase
+	+rbc
+	.soc__item
+		margin-left: 15px
+		line-height: 30px
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	.ico
+		vertical-align: sub
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// footer
+.footer
+	height: 598px
+	color: #fff
+	background: url('../img/footer-bg.png') repeat-x 50% 50%
+	a
+		color: #fff
+	.footer__in
+		@extend %in
+	.footer__row
+		margin-top: 30px
+		+clr
+	.footer__col
+		float: left
+		width: 302px
+		padding-left: 40px
+		+box
+		&:first-child
+			padding-left: 0
+		&:last-child
+			padding: 10px 20px 0 0
+			width: 284px
+	.footer__list
+		padding-left: 10px
+		margin-bottom: 35px
+		li
+			margin-top: 4px
+			&:first-child
+				margin-top: 0
+			a
+				font-size: 15px
+				+rbm
+			ul
+				margin-top: 23px
+				li
+					margin-top: 11px
+				a
+					font-size: 17px
+	.title-small,
+	.phone
+		margin-bottom: 16px
+		text-align: left
+		font-weight: normal
+	.phone,
+	.mail,
+	.address
+		margin-left: 26px
+	.phone
+		margin-bottom: 6px
+	.address
+		font-style: normal
+		margin-top: 5px
 
 
 
