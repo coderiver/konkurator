@@ -78,7 +78,6 @@ body
 		+transition(all .1s linear)
 		&:hover
 			text-decoration: underline
-
 // in
 .in
 	margin: 0 auto
@@ -143,6 +142,12 @@ body
 		+s(ico-in)
 	&.ico_f
 		+s(ico-f)
+	&.ico_mail-big
+		+s(ico-mail-big)
+	&.ico_rocket
+		+s(ico-rocket)
+	&.ico_arr-right
+		+s(ico-arr-right)
 
 // btn
 .btn
@@ -170,6 +175,27 @@ body
 		background-color: #464B55
 		&:hover
 			background: darken(#464B55, 6)
+	&.btn_gray-dark
+		padding: 15px 0
+		height: 52px
+		font-size: 20px
+		line-height: 1
+		text-align: center
+		width: 100%
+		background: #3f444c
+		+border-radius(4px)
+		+rbcb
+		&:hover
+			+opacity(.8)
+		.ico
+			margin-left: 5px
+			vertical-align: middle
+
+// out
+.out
+	padding-bottom: 598px
+	min-height: 100%
+	+box
 
 // header 
 .header
@@ -320,16 +346,303 @@ body
 		.ico
 			vertical-align: middle
 
+// content
+.content
+	h1,
+	h2
+		text-transform: uppercase
+		+rbcb
+	h1
+		margin: 40px 0
+		color: #464B55
+		text-align: center
+		font-size: 36px
+	h2,
+	h3
+		margin-bottom: 10px
+		line-height: 1.1
+	h2
+		font-size: 20px
+	h3
+		margin-top: 25px
+		font-size: 18px
+		+rbb
+	a
+		color: #931C18
+	p
+		margin-top: 10px
+		font-size: 15px
+		&:first-child
+			margin-top: 0
+	table
+		margin-bottom: 120px
+		border: 1px solid #B9B9B9
+		border-bottom: none
+		tr
+			&:nth-child(odd)
+				background: #f1f1f1
+		th, td
+			line-height: 1.2
+			+box 
+		th
+			padding: 38px 10px 20px 35px
+			height: 66px
+			color: #FFF
+			text-align: left
+			font-size: 18px
+			background-color: #3F444C
+			+rbcb
+		td
+			padding: 0 46px 0 35px
+			min-height: 59px
+			line-height: 59px
+			font-size: 15px
+			border-bottom: 1px solid #B9B9B9
+			&:first-child
+				border-right: 1px solid #B9B9B9 
+			span, p, div
+				line-height: 1.2
+				vertical-align: middle
+				display: inline-block                        
+
+	.content__in
+		@extend %in
+	.field
+		img
+			float: left
+			margin-right: 40px
+	.row
+		.list,
+		.list-number
+			float: left
+			width: 50%
+	.form
+		width: 642px
+		display: inline-block
+
+// row
+.row
+	margin: 50px 0
+	padding: 0 5px 0 40px
+	+clr
+
+// field
+.field
+	margin: 50px 0
+	+clr
+
+// info-block
+.info-block
+	padding: 65px 0 72px
+	color: #FFF
+	text-align: center
+	letter-spacing: -0.2px
+	font-size: 18px
+	background: url(../img/info-block-img.png) no-repeat 50% 50%
+	background-size: cover
+	+rbm
+	.info-block__in
+		margin: 0 auto
+		width: 840px
+
+// list
+.list
+	li
+		&:before
+			content: ''
+.list-number
+	+counter(1)
+.list,
+.list-number
+	li
+		position: relative
+		margin-top: 20px
+		padding: 0 35px 0 65px
+		color: #252525
+		font-size: 16px
+		+rbcb
+		&:before
+			position: absolute
+			left: 0
+			top: 50%
+			margin-top: -14px
+			height: 28px
+			width: 36px
+			color: #fff
+			line-height: 28px
+			text-align: center
+			z-index: 1
+			background: #941c19
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+			top: 50%
+			margin-top: -14px
+			height: 28px
+			width: 43px
+			background-color: rgba(148, 28, 25, 0.66)
+		&:first-child
+			margin-top: 0
+
+// ico-block
+.ico-block
+	position: relative
+	margin-right: 104px
+	padding-right: 39px
+	width: 202px
+	height: 153px
+	line-height: 153px
+	text-align: center
+	background-color: #5f646d
+	vertical-align: top
+	display: inline-block
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		bottom: 0
+		right: 0
+		width: 39px
+		background-color: #f1f1f1
+	.ico
+		vertical-align: middle
+
+// form
+.form
+	input
+		padding: 0 10px
+		width: 100%
+		font-size: 20px
+		height: 54px
+		background-color: white
+		border: 1px solid #b9b9b9
+		+border-radius(4px)
+		+box
+	.form__row
+		font-size: 0
+		margin-top: 10px
+		&:first-child
+			margin-top: 0
+	.form__label
+		color: grey
+		line-height: 1.7
+		font-size: 20px
+		+rbcb
+		display: block
+	.form__col
+		margin-left: 2%
+		display: inline-block
+		width: 49%
+		&:first-child
+			margin-left: 0
+
+// radiobutton
+.radiobutton
+	position: relative
+	margin-top: 20px
+	padding-left: 35px
+	font-size: 16px
+	line-height: 20px
+	cursor: pointer
+	+user-select(none)
+	+rbcb
+	display: block
+	input
+		position: absolute
+		top: 0
+		left: 37px
+		width: 20px
+		height: 20px
+		+opacity(0)
+		z-index: 2
+		&:checked + span
+			&:before
+				background-color: #931c18
+				border: 2px solid #931c18
+				+box-shadow(none)
+			&:after
+				display: block
+	span
+		position: relative
+		padding-left: 35px
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			width: 20px
+			height: 20px
+			background-color: #f1f1f1
+			border: 2px solid #5f646d
+			+border-radius(50%)
+			+box-shadow(inset 0 1px 5px rgba(0, 0, 0, 0.33))
+			+box
+		&:after
+			position: absolute
+			content: ''
+			top: 6px
+			left: 4px
+			+s(ico-radio-arr)
+			display: none
+			
+// interview
+.interview
+	padding: 65px 0 50px
+	margin: 0 0 29px
+	border-top: 1px dotted #c7c9cc
+	border-bottom: 1px dotted #c7c9cc
+	.interview__in
+		@extend %in
+	.interview__col
+		width: 840px
+		display: inline-block
+		vertical-align: top
+	.interview__form
+		padding-top: 50px
+		.btn
+			margin-top: 20px
+			width: 642px
+
 // title
 .title
 	font-size: 36px
 
 .title-small,
+.title-red,
 .title
 	text-align: center
 	line-height: 1.2
 	text-transform: uppercase
 	+rbcb
+
+.title-red
+	position: relative
+	margin: 50px 106px 50px 0
+	padding: 27px 65px 40px 40px
+	width: 566px
+	text-align: left
+	color: #F1F1F1
+	letter-spacing: -0.5px
+	font-size: 36px
+	background-color: #941C19
+	+box
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		right: -106px
+		bottom: 0
+		width: 106px
+		background-color: rgba(148, 28, 25, 0.66)
+	span
+		position: absolute
+		top: -5px
+		right: 33px
+		font-size: 91px
+		line-height: 10px
+		+rbb
+		+rotate(180)
 
 // title-small
 .title-small
@@ -649,9 +962,13 @@ body
 			margin-left: 0
 	.ico
 		vertical-align: sub
+		&:hover
+			+opacity(.8)
+
 
 // footer
 .footer
+	margin-top: -598px
 	height: 598px
 	color: #fff
 	background: url('../img/footer-bg.png') repeat-x 50% 50%
@@ -705,6 +1022,12 @@ body
 
 
 
+// copy
+.copy
+	margin-top: 15px
+	font-size: 13px
+	a
+		color: #931C18
 
 
 
