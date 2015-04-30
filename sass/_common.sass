@@ -253,16 +253,70 @@ body
 	letter-spacing: -0.2px
 	+rbcb
 
+// breadcrumb
+.breadcrumb
+	position: relative
+	margin: 0 40px 25px
+	padding: 18px 0 16px
+	font-size: 0
+	border-bottom: 1px solid #dcdcdc
+	+rbc
+	&:before
+		position: absolute
+		content: ''
+		left: 0
+		right: 0
+		bottom: -4px
+		height: 1px
+		background: #dcdcdc
+	li
+		font-size: 13px
+		display: inline-block
+		a
+			color: #000
+	span
+		margin: 0 5px
+		display: inline-block
+
+// topic
+.topic
+	padding: 12px 0 35px
+	background: url('../img/slider-img-1.png') no-repeat 50% 50%
+	background-size: cover
+	background-attachment: fixed
+	.topic__in
+		padding-left: 40px
+		@extend %in
+	.breadcrumb
+		margin: 0
+		padding: 0
+		border: none
+		color: #fff
+		&:before
+			display: none
+		li a
+			color: #fff
+	h1
+		color: #fff
+		text-transform: uppercase
+		+rbcb
+		font-size: 36px
+
+
 // slider
 .slider
 	height: 600px
 	overflow: hidden
+	background: url('../img/slider-img-1.png') no-repeat 50% 50%
+	background-size: cover
+	background-attachment: fixed
 	.slider__item
 		width: 100%
 		height: 600px
-		&.slider__item_1
-			background: url('../img/slider-img-1.png') no-repeat 50% 50%
-			background-size: cover
+		// &.slider__item_1
+		// 	background: url('../img/slider-img-1.png') no-repeat 50% 50%
+		// 	background-size: cover
+		// 	background-attachment: fixed
 		&.slider__item_2
 			background: url('../img/slider-img-2.png') no-repeat 50% 50%
 			background-size: cover
@@ -356,14 +410,16 @@ body
 
 // content
 .content
+	&.content_mod
+		h1
+			margin: 0 0 30px 40px
+			line-height: 1
 	h1,
 	h2
 		text-transform: uppercase
 		+rbcb
 	h1
-		margin: 40px 0
-		color: #464B55
-		text-align: center
+		margin: 0 0 40px
 		font-size: 36px
 	h2,
 	h3
@@ -379,7 +435,6 @@ body
 		color: #931C18
 	p
 		margin-top: 10px
-		font-size: 15px
 		&:first-child
 			margin-top: 0
 	table
@@ -421,10 +476,50 @@ body
 			float: left
 			margin-right: 40px
 	.row
-		.list,
-		.list-number
-			float: left
-			width: 50%
+		&.row_mod
+			ul,
+			ol
+				float: left
+				width: 50%
+		ul
+			li
+				&:before
+					content: ''
+		ol
+			+counter(1)
+		ul,
+		ol
+			li
+				position: relative
+				margin-top: 20px
+				padding: 0 35px 0 65px
+				color: #252525
+				font-size: 16px
+				+rbcb
+				&:before
+					position: absolute
+					left: 0
+					top: 50%
+					margin-top: -14px
+					height: 28px
+					width: 36px
+					color: #fff
+					line-height: 28px
+					text-align: center
+					z-index: 1
+					background: #941c19
+				&:after
+					position: absolute
+					content: ''
+					left: 0
+					top: 50%
+					margin-top: -14px
+					height: 28px
+					width: 43px
+					background-color: rgba(148, 28, 25, 0.66)
+				&:first-child
+					margin-top: 0
+
 	.form
 		width: 642px
 		display: inline-block
@@ -450,50 +545,13 @@ body
 	font-size: 18px
 	background: url(../img/info-block-img.png) no-repeat 50% 50%
 	background-size: cover
+	background-attachment: fixed
+	display: block
 	+rbm
 	.info-block__in
 		margin: 0 auto
 		width: 840px
 
-// list
-.list
-	li
-		&:before
-			content: ''
-.list-number
-	+counter(1)
-.list,
-.list-number
-	li
-		position: relative
-		margin-top: 20px
-		padding: 0 35px 0 65px
-		color: #252525
-		font-size: 16px
-		+rbcb
-		&:before
-			position: absolute
-			left: 0
-			top: 50%
-			margin-top: -14px
-			height: 28px
-			width: 36px
-			color: #fff
-			line-height: 28px
-			text-align: center
-			z-index: 1
-			background: #941c19
-		&:after
-			position: absolute
-			content: ''
-			left: 0
-			top: 50%
-			margin-top: -14px
-			height: 28px
-			width: 43px
-			background-color: rgba(148, 28, 25, 0.66)
-		&:first-child
-			margin-top: 0
 
 // ico-block
 .ico-block
@@ -766,7 +824,7 @@ body
 
 .title-red
 	position: relative
-	margin: 50px 106px 50px 0
+	margin: 30px 106px 50px 0
 	padding: 27px 65px 40px 40px
 	width: 566px
 	text-align: left
@@ -795,7 +853,9 @@ body
 	.title-red__small
 		font-size: 20px
 	.title-red__big
-		margin-top: 5px
+		margin: 5px 0 2px
+		color: #fff
+		text-align: left
 		font-size: 30px
 
 .title-red-img
@@ -901,6 +961,7 @@ body
 		float: left
 	.title-small
 		text-align: left
+		+rbcb
 
 // leading
 .leading
@@ -1212,6 +1273,9 @@ body
 // bimpost
 .bimpost
 	background: #31353b
+	display: block
+	&:hover
+		text-decoration: none
 	.bimpost__img
 		width: 265px
 		img
@@ -1236,17 +1300,19 @@ body
 		&:first-child
 			margin-left: 0
 	.ico
-		vertical-align: sub
+		margin-bottom: -2px
 		&:hover
 			+opacity(.8)
 
 
 // footer
 .footer
+	padding-top: 35px
 	margin-top: -598px
 	height: 598px
 	color: #fff
 	background: url('../img/footer-bg.png') repeat-x 50% 50%
+	+box
 	a
 		color: #fff
 	.footer__in
@@ -1273,13 +1339,13 @@ body
 				margin-top: 0
 			a
 				font-size: 15px
-				+rbm
 			ul
 				margin-top: 23px
 				li
 					margin-top: 11px
 				a
 					font-size: 17px
+					+rbc
 	.title-small,
 	.phone
 		margin-bottom: 16px
@@ -1303,78 +1369,6 @@ body
 	font-size: 13px
 	a
 		color: #931C18
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
