@@ -1,4 +1,4 @@
-head.ready(function() {
+$(document).ready(function() {
 
 	// slider
 	$('.js-slider').slick({
@@ -77,4 +77,10 @@ head.ready(function() {
 
 	initialize();
 
+	$('#fullpage').fullpage({
+		anchors: ['firstSlide', 'secondSlide', '3rdSlide', '4thSlide'],
+		scrollOverflow: true,
+		css3: true
+	});
+	
 });
