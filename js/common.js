@@ -14,6 +14,13 @@ $(document).ready(function() {
 		slidesToShow: 1
 	});
 
+	$('.js-team-slider').slick({
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 5
+	});
+
 	// tab
 	function tab() {
 		$(".js-tab").each(function(){
